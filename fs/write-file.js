@@ -1,7 +1,8 @@
-const fs = require("node:fs")
+const fs = require('node:fs')
 
 try {
-  fs.writeFileSync("./arquivo.txt", "hello Word!", "utf-8")
+  fs.writeFileSync("./arquivo.txt", "Olá, mundo!", "utf-8")
+  console.log("Arquivo criado com sucesso.")
 } catch (error) {
-  console.log("erro no arquivo", erro.message)
+  console.log("Erro ao escrever o arquivo: ", error.message)
 }
