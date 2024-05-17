@@ -1,37 +1,30 @@
 import fs from "node:fs"
 
 export function createFile(text) {
-  fs.writeFile("meuarquivo.txt", text, (error) => {
-    if (error) {
-      console.log("Erro ao escrever arquivo: ", error.message)
-    }
-  })
+  fs.writeFileSync("meuarquivo.txt", text)
+  console.log("Criando o arquivo....")
 }
 
+
 export function showFile() {
-  fs.readFile("meuarquivo.txt", "utf-8", (error, text) => {
-    if (error) {
-      console.log("Erro ao ler arquivo: ", error.message)
-    } else {
-      console.log(text)
-    }
-  })
+  try {
+    const content = fs.readFileSync("meuarquivo.txt", "utf-8")
+    console.log(content)
+  } catch (error) {
+    console.log("Erro:", error.message)
+  }
 }
 
 export function updateFile(newText) {
-  fs.writeFile("meuarquivo.txt", newText, (error) => {
-    if (error) {
-      console.log("Erro ao modificar arquivo: ", error.message)
-    }
-  })
+  fs.writeFileSync("meuarquivo.txt", newText)
 }
 
 export function deleteFile() {
-  fs.unlink("meuarquivo.txt", (error) => {
-    if (error) {
-      console.log("Erro ao excluir o arquivo: ", error.message)
-    } else {
-      console.log("Arquivo excluído com sucesso!")
-    }
-  })
+
+  try {
+    fs.unlinkSync("meuarquivo.txt")
+    console.log("Arquivo excluido com sucesso")
+  } catch (error) {
+    console.log('Erro ao excluir o arquivo: ', error.message)
+  }
 }
