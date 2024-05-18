@@ -1,0 +1,99 @@
+
+  ====================================
+  Segundos: 48
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.686283111572266 GB 
+  
+  ====================================
+  Segundos: 49
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.6982574462890625 GB 
+  
+  ====================================
+  Segundos: 50
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.696811676025391 GB 
+  
+  ====================================
+  Segundos: 51
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.693756103515625 GB 
+  
+  ====================================
+  Segundos: 3
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.712066650390625 GB 
+  
+  ====================================
+  Segundos: 4
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.712779998779297 GB 
+  
+  ====================================
+  Segundos: 5
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.710849761962891 GB 
+  
+  ====================================
+  Segundos: 6
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.714168548583984 GB 
+  
+  ====================================
+  Segundos: 7
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.711711883544922 GB 
+  
+  ====================================
+  Segundos: 8
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.703540802001953 GB 
+  
+  ====================================
+  Segundos: 9
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.695304870605469 GB 
+  
+  ====================================
+  Segundos: 10
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.695461273193359 GB 
+  
+  ====================================
+  Segundos: 11
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.7103424072265625 GB 
+  
+  ====================================
+  Segundos: 12
+  Nome do sistema Operacional = win32
+  Arquitetura do sistema = x64
+  Nome do processador= AMD Ryzen 5 5600G with Radeon Graphics          
+  Uso da memoria = 5.709331512451172 GB 
+  
