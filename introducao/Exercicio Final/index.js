@@ -47,12 +47,29 @@ Bem vindo ao Menu (Para sair digite CTRL+C):
       })
 
     })
+  } else if (resposta === "2") {
+    console.log(fs.readdirSync("./notes"))
+    rl.close()
   }
 
   else if (resposta === "3") {
     rl.question("Qual o nome do arquivo quer deseja ler: ", (nameArq) => {
-      fs.readFile(`${nameArq}.txt`, "utf8", (_, data) => {
+      fs.readFile(`notes/${nameArq}.txt`, "utf8", (_, data) => {
         console.log("Conteúdo do arquivo:", data);
+        rl.close();
+      })
+    })
+
+
+  } else if (resposta === "4") {
+    rl.question("Qual o nome do arquivo quer deseja apagar: ", (nameArq) => {
+      fs.unlink(`notes/${nameArq}.txt`, (err) => {
+        if (err) {
+          console.log("Este arquivo nao existe!")
+        } else {
+          console.log("Arquivo apagado!");
+        }
+
         rl.close();
       })
     })
