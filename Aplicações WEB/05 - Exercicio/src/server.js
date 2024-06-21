@@ -3,7 +3,8 @@ const path = require("node:path")
 
 const PORT = 3000
 const app = express()
-const memory = []
+var memory = []
+
 
 
 app.use(express.urlencoded({ extended: true }))
@@ -23,16 +24,29 @@ app.get("/", (req, res) => {
 
 
 app.post("/register", (req, res) => {
-  const username = req.body.username
+
   const email = req.body.email
 
-  memory.push({ email, username })
 
-  res.redirect("/users")
+  res.render("sucess")
+  memory.push(email)
+
+
 })
 
-app.get("/users", (req, res) => {
+app.get("/emails", (req, res) => {
 
 
   res.render("emails", { memory })
 })
+
+app.post("/remove", (req, res) => {
+
+  const { email } = req.body
+  memory = memory.filter(item => item !== email)
+
+  res.redirect('/emails');
+
+
+})
+
