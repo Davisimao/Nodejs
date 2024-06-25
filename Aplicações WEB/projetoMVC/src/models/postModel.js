@@ -38,11 +38,7 @@ const postModel = {
 
   deletePost(id) {
 
-    const index = posts.findIndex(element => {
-      element.id == id
-    })
-
-    posts.splice(index, 1)
+    posts.filter(element => element.id !== id)
 
   }
 }
