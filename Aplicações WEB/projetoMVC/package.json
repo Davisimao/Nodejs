@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node --watch src/index.js "
   },
+  "type": "commonjs",
   "keywords": [],
   "author": "",
   "license": "ISC",
