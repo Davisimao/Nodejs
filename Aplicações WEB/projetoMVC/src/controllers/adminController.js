@@ -13,16 +13,23 @@ const adminController = {
   createPost: (req, res) => {
     /*post  que renderiza pega a requisição*/
     const { title, content } = req.body
-
     postModel.savePost(postModel.createPost(title, content))
-
-
     res.redirect("/admin")
 
   },
-  edit: (req, res) => {
-    res.send("hello word!")
+  showEditPage: (req, res) => {
+    const { id } = req.params
+    const post = postModel.getPostById(id)
+    res.render("edit", { post, id })
   },
+  updatePost: (req, res) => {
+    const { title, content } = req.body
+    const { id } = req.params
+    const updatedPost = { title, content }
+    postModel.updatePost(id, updatedPost)
+    res.redirect("/")
+  },
+
   deletePost: (req, res) => {
     const { id } = req.params
     postModel.deletePost(id)

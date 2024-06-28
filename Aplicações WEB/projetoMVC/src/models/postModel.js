@@ -31,7 +31,7 @@ const postModel = {
 
   updatePost(id, updatedPost) {
     const index = posts.findIndex(element => {
-      element.id == id
+      return element.id == id
     })
 
     posts[index] = { ...posts[index], ...updatedPost, updatedAt: new Date() } /* colcoar somente o updatedPost?? */
@@ -39,7 +39,6 @@ const postModel = {
 
   deletePost(id) {
     posts = posts.filter(element => element.id !== id)
-
   }
 }
 
