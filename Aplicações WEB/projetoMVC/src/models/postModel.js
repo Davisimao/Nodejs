@@ -4,9 +4,6 @@ let posts = [
   { id: "3", title: "Gerenciando Pacotes com npm", content: "Saiba como utilizar o npm para instalar, atualizar e gerenciar pacotes de maneira eficiente em projetos Node.js.", createdAt: new Date(), updatedAt: new Date() }
 ]
 
-
-
-
 const postModel = {
   getAllPosts() {
     return posts
