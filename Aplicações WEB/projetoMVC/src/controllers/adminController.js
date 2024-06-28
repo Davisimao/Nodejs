@@ -7,10 +7,11 @@ const adminController = {
     res.render("admin", { posts })
   },
   showCreatePage: (req, res) => {
+    /* get que renderiza a página */
     res.render('create')
   },
   createPost: (req, res) => {
-
+    /*post  que renderiza pega a requisição*/
     const { title, content } = req.body
 
     postModel.savePost(postModel.createPost(title, content))
@@ -22,12 +23,10 @@ const adminController = {
   edit: (req, res) => {
     res.send("hello word!")
   },
-  delete: (req, res) => {
-
-    postModel.deletePost(req.params.id)
-
-
-    res.redirect("/admin")
+  deletePost: (req, res) => {
+    const { id } = req.params
+    postModel.deletePost(id)
+    res.redirect('/admin')
   }
 
 }
