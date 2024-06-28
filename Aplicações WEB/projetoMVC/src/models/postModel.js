@@ -22,7 +22,7 @@ const postModel = {
       updatedAt: new Date()
     }
 
-    return posts.push(post)
+    return post
 
   },
 
@@ -40,7 +40,7 @@ const postModel = {
 
   deletePost(id) {
     posts.filter(element => element.id !== id)
-
+    console.log(posts.filter(element => element.id !== id))
   }
 }
 
