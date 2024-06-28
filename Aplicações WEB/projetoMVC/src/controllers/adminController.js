@@ -7,10 +7,18 @@ const adminController = {
     res.render("admin", { posts })
   },
   createPost: (req, res) => {
-    res.send("hello word!")
+    res.render("newPostForm")
+
+    console.log(req.body)
+    postModel.createPost(req.body.title, req.body.content)
+
   },
   edit: (req, res) => {
     res.send("hello word!")
+  },
+  delete: (req, res) => {
+    res.send("hello word!")
+    console.log(req.body)
   }
 
 }

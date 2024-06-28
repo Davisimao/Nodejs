@@ -14,6 +14,7 @@ router.get("/admin", adminController.index)
 /* router.get("/admin/edit/:id", adminController.edit) */
 router.get("/admin/create", adminController.createPost)
 router.post("/admin/create", adminController.createPost)
+router.post("/admin/delete/:id", adminController.delete)
 
 
 module.exports = router

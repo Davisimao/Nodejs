@@ -21,7 +21,9 @@ const postModel = {
       createdAt: new Date(),
       updatedAt: new Date()
     }
-    return post
+
+    return posts.push(post)
+
   },
 
   savePost(post) {
