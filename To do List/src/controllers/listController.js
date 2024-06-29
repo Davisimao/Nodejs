@@ -1,6 +1,6 @@
 const listController = {
   index: (req, res) => {
-    res.send("hello")
+    res.render("index")
   }
 }
 
