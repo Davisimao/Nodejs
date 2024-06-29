@@ -1,5 +1,5 @@
-Uma página inicial de apresentação
-Uma página exibindo todas as listas de tarefas
+Uma página inicial de apresentação - OK
+Uma página exibindo todas as listas de tarefas - doing
 Criação de novas listas de tarefas (cada lista agrupa suas próprias tarefas)
 Uma página para exibir as tarefas de uma lista específica
 Uma forma de adicionar uma nova tarefa a uma lista
