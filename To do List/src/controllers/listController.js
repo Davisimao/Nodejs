@@ -12,6 +12,8 @@ const listController = {
   appPost: (req, res) => {
     const { nameList } = req.body
 
+    listModel.createList(nameList)
+
 
     res.redirect("app")
   },

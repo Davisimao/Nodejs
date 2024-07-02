@@ -8,10 +8,11 @@ const listModel = {
 
   createList(content) {
     const list = {
-      contenet: content,
+      content: content,
       id: (Math.random() * 1000).toFixed()
     }
     lists.push(list)
+
   }
 
 }

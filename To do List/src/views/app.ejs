@@ -19,13 +19,13 @@
     <button type="submit">Nova lista de tarefas</button>
   </form>
 
-  <p>
+  <div>
     <% lists.forEach(item=> { %>
-      <span>
+      <a href="/app/">
         <%= item.content %>
-      </span><br>
+      </a><br>
       <% }) %>
-  </p>
+  </div>
 
 
 </body>
