@@ -1,14 +1,17 @@
-const { list } = require("postcss")
+const listModel = require("../models/listModel")
 
 const listController = {
   index: (req, res) => {
     res.render("index")
   },
   app: (req, res) => {
-    res.render("app")
+    const lists = listModel.getAllList()
+
+    res.render("app", { lists })
   },
   appPost: (req, res) => {
-    console.log(req.body)
+    const { nameList } = req.body
+
 
     res.redirect("app")
   },
