@@ -21,9 +21,10 @@
 
   <div>
     <% lists.forEach(item=> { %>
-      <a href="/app/">
+      <a href="/app/<%= item.id %>">
         <%= item.content %>
-      </a><br>
+      </a>
+      <br>
       <% }) %>
   </div>
 

@@ -20,6 +20,9 @@ const listController = {
   newList: (req, res) => {
     res.render("newList")
   },
+  tasks: (req, res) => {
+    res.send("hello")
+  }
 }
 
 
