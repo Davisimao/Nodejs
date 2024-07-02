@@ -4,9 +4,17 @@ const listController = {
   index: (req, res) => {
     res.render("index")
   },
-  list: (req, res) => {
-    res.render("list")
-  }
+  app: (req, res) => {
+    res.render("app")
+  },
+  appPost: (req, res) => {
+    console.log(req.body)
+
+    res.redirect("app")
+  },
+  newList: (req, res) => {
+    res.render("newList")
+  },
 }
 
 
