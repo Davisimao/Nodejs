@@ -1,4 +1,5 @@
 const listModel = require("../models/listModel")
+const teskModel = require("../models/tesksModel")
 
 const listController = {
   index: (req, res) => {
@@ -23,7 +24,9 @@ const listController = {
   tasks: (req, res) => {
     const { id } = req.params
     const list = listModel.getListById(id)
-    res.render("tesks", { list })
+
+    const tesks = teskModel.getAllTesks()
+    res.render("tesks", { list, tesks })
   }
 }
 

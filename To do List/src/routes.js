@@ -1,5 +1,6 @@
 const express = require("express")
 const listController = require("./controllers/listController")
+const teskController = require("./controllers/teskController")
 
 
 const router = express.Router()
@@ -11,5 +12,6 @@ router.post("/app", listController.appPost)
 router.post("/app/new-list", listController.newList)
 router.get("/app/new-list", listController.newList)
 router.get("/app/:id", listController.tasks)
+router.post("/app/:id", teskController.tesk)
 
 module.exports = router

@@ -11,11 +11,17 @@
   <h1>
     <%= list.content %>
   </h1>
-  <form action="" method="post">
+  <form action="/app/<%=list.id%>" method="post">
     <input type="text" name="nameTesk">
     <button type="submit">criar</button>
   </form>
-
+  <div>
+    <% tesks.forEach(tesk=> { %>
+      <p>
+        <%= tesk.content %>
+      </p>
+      <% }); %>
+  </div>
 </body>
 
 </html>
