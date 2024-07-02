@@ -23,8 +23,6 @@ const listController = {
   tasks: (req, res) => {
     const { id } = req.params
     const list = listModel.getListById(id)
-
-    console.log({ list })
     res.render("tesks", { list })
   }
 }
