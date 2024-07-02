@@ -21,7 +21,11 @@ const listController = {
     res.render("newList")
   },
   tasks: (req, res) => {
-    res.send("hello")
+    const { id } = req.params
+    const list = listModel.getListById(id)
+
+    console.log({ list })
+    res.render("tesks", { list })
   }
 }
 

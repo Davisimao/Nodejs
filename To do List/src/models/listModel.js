@@ -1,4 +1,4 @@
-var lists = [{ id: 1, content: "tarefa de casa" }]
+var lists = [{ id: "1", content: "tarefa de casa" }]
 
 const listModel = {
 
@@ -13,6 +13,10 @@ const listModel = {
     }
     lists.push(list)
 
+  },
+
+  getListById(id) {
+    return lists.find(element => element.id === id)
   }
 
 }
