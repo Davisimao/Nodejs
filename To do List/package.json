@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "dev": "nodemon src/index.js | browser-sync start --proxy 'localhost:3000' --files 'public, src'"
+  "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
