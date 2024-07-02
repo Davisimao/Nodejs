@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
 
-app.listen(3000, () => console.log("iniciando servidor: https://localhost:3000"))
+app.listen(3000, () => console.log("iniciando servidor: http://localhost:3000"))
 
 app.use(router)
 
