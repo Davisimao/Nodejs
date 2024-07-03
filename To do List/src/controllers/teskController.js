@@ -14,8 +14,16 @@ const teskController = {
 
     const { id } = req.params;
     const { listId } = req.body
-    
+
     teskModel.deleteTesk(id);
+
+    res.redirect(`/app/${listId}`);
+  },
+  changeStatus: (req, res) => {
+    const { id } = req.params;
+    const { listId } = req.body
+
+    teskModel.turnOnStatus(id);
 
     res.redirect(`/app/${listId}`);
   }
