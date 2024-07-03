@@ -1,4 +1,4 @@
-var lists = [{ id: "1", content: "tarefa de casa" }]
+var lists = []
 
 const listModel = {
 

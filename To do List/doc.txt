@@ -1,6 +1,0 @@
-Uma página inicial de apresentação - OK
-Uma página exibindo todas as listas de tarefas - ok
-Criação de novas listas de tarefas (cada lista agrupa suas próprias tarefas)
-Uma página para exibir as tarefas de uma lista específica
-Uma forma de adicionar uma nova tarefa a uma lista
-Formas de marcar como concluída e excluir uma tarefa (botão, checkbox, etc)

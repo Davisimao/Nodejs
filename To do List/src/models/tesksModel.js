@@ -1,4 +1,4 @@
-var tesks = [{ content: "Cagar na pia" }]
+var tesks = []
 
 
 const teskModel = {
