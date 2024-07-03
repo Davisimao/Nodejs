@@ -12,7 +12,7 @@
   <div class="flex flex-col justify-center items-center h-screen text-center ">
     <h1 class="text-4xl mb-10">Lista de Tarefas</h1>
 
-    <form method="post" action="/app/new-list" class="flex flex-col gap-10">
+    <div method="post" class="flex flex-col gap-6">
       <div class="flex flex-row text-center items-center justify-between border p-2 rounded-md border-gray-600"
         style="width: 660px;">
         <% lists.forEach(item=> { %>
@@ -21,18 +21,20 @@
               <%= item.content %>
             </a>
           </div>
-          <br>
-          <button class="p-1 rounded-md bg-red-500">excluir</button>
+          <form action="/app/id/delete" method="post">
+            <button class="p-1 rounded-md bg-red-500" type="submit">excluir</button>
+          </form>
           <% }) %>
-
       </div>
-      <button type="submit" class="p-2 rounded-md bg-blue-500 text-[14px]" style="width: 150px;">Nova lista de
-        tarefas</button>
-    </form>
+      <a href="/app/new-list" class="p-2 rounded-md bg-blue-500 text-[14px]" style="width: 150px;">Nova
+        lista
+        de
+        tarefas</a>
+      </form>
 
 
 
-  </div>
+    </div>
 </body>
 
 </html>
