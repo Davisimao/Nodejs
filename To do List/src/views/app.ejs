@@ -4,33 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>Document</title>
 </head>
 
-<body>
+<body class="bg-gray-900 text-white">
+  <div class="flex flex-col justify-center items-center h-screen text-center ">
+    <h1 class="text-4xl mb-10">Lista de Tarefas</h1>
 
-  <h1>Lista de tarefa</h1>
+    <form method="post" action="/app/new-list" class="flex flex-col gap-10">
+      <div class="flex flex-row text-center items-center justify-between border p-2 rounded-md border-gray-600"
+        style="width: 660px;">
+        <% lists.forEach(item=> { %>
+          <div>
+            <a class="text-[18px] uppercase underline" href="/app/<%= item.id %>">
+              <%= item.content %>
+            </a>
+          </div>
+          <br>
+          <button class="p-1 rounded-md bg-red-500">excluir</button>
+          <% }) %>
 
-  <form method="post" action="/app/new-list">
-    <p>nomes das listas</p>
-    <div>
-      <p>onde mostra todas as listas</p>
-    </div>
-    <button type="submit">Nova lista de tarefas</button>
-  </form>
+      </div>
+      <button type="submit" class="p-2 rounded-md bg-blue-500 text-[14px]" style="width: 150px;">Nova lista de
+        tarefas</button>
+    </form>
 
-  <div>
-    <% lists.forEach(item=> { %>
-      <a href="/app/<%= item.id %>">
-        <%= item.content %>
-      </a>
-      <br>
-      <button>excluir</button>
-      <% }) %>
+
 
   </div>
-
-
 </body>
 
 </html>
