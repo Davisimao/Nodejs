@@ -24,11 +24,15 @@
           <%= tesk.content %>
         </p>
         <form action="/app/tesk/<%=tesk.id%>/delete" method="post">
+          <input type="hidden" name="listId" value="<%= list.id %>">
           <button type="submit" class="px-2 py-1 rounded-md bg-red-500 "> Excluir</button>
         </form>
       </div>
       <% }); %>
+
+
   </div>
+  <a href="/app" class="rounded-md p-2 bg-gray-500">Voltar</a>
 </body>
 
 </html>

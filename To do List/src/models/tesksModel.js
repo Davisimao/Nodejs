@@ -9,7 +9,7 @@ const teskModel = {
     const tesk = {
       content: content,
       status: true,
-      id: (Math.random() * 10000).toFixed()
+      id: (Math.random() * 10000).toFixed(),
     }
 
     return tesks.push(tesk)
@@ -17,8 +17,6 @@ const teskModel = {
 
   deleteTesk(id) {
     tesks = tesks.filter(element => element.id !== id)
-
-    console.log(tesks)
   }
 }
 

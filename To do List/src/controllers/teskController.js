@@ -6,18 +6,18 @@ const teskController = {
     const { nameTesk } = req.body
     const { id } = req.params
 
-    teskModel.createNewTesk(nameTesk)
+    teskModel.createNewTesk(nameTesk, id)
 
     res.redirect(`/app/${id}`)
   },
   deleteTesk: (req, res) => {
-    const { id } = req.params
-    console.log(id)
-    teskModel.deleteTesk(id)
 
+    const { id } = req.params;
+    const { listId } = req.body
+    
+    teskModel.deleteTesk(id);
 
-
-    /* estou passando o id da tesk, precisa ser o id da lista */
+    res.redirect(`/app/${listId}`);
   }
 }
 
