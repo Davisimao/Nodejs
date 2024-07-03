@@ -1,5 +1,3 @@
-
-
 var tesks = []
 
 
@@ -19,6 +17,8 @@ const teskModel = {
 
   deleteTesk(id) {
     tesks = tesks.filter(element => element.id !== id)
+
+    console.log(tesks)
   }
 }
 

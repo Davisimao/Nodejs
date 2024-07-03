@@ -12,10 +12,10 @@ const teskController = {
   },
   deleteTesk: (req, res) => {
     const { id } = req.params
-
+    console.log(id)
     teskModel.deleteTesk(id)
 
-    res.redirect(`/app/${id}`)
+
 
     /* estou passando o id da tesk, precisa ser o id da lista */
   }
