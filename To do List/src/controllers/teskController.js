@@ -15,7 +15,9 @@ const teskController = {
 
     teskModel.deleteTesk(id)
 
-    res.redirect(`/app/${id}/delete`)
+    res.redirect(`/app/${id}`)
+
+    /* estou passando o id da tesk, precisa ser o id da lista */
   }
 }
 

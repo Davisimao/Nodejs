@@ -14,6 +14,6 @@ router.get("/app/new-list", listController.newList)
 router.get("/app/:id", listController.tasks)
 router.post("/app/:id", teskController.tesk)
 router.post("/app/:id/delete", listController.deleteList)
-router.post("/app/:id/delete", teskController.deleteTesk)
+router.post("/app/tesk/:id/delete", teskController.deleteTesk)
 
 module.exports = router
