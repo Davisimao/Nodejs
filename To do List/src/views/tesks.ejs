@@ -4,22 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>Document</title>
 </head>
 
-<body>
-  <h1>
+<body class="flex flex-col justify-center items-center h-screen text-center gap-10 bg-gray-900 text-white">
+  <h1 class="text-4xl uppercase ">
     <%= list.content %>
   </h1>
   <form action="/app/<%=list.id%>" method="post">
-    <input type="text" name="nameTesk">
-    <button type="submit">criar</button>
+    <input type="text" name="nameTesk" class="p-3 py-4 border border-white bg-gray-900 h-10 rounded-md"
+      style="width: 400px;" placeholder="Adicione uma Nova Tarefa">
+    <button type="submit" class="py-2 px-4 rounded-md bg-blue-500">criar</button>
   </form>
-  <div>
+  <div class="flex flex-col gap-5 ">
     <% tesks.forEach(tesk=> { %>
-      <p>
-        <%= tesk.content %>
-      </p>
+      <div class="border border-gray-600 flex flex-row items-center justify-between px-3 py-2" style="width: 320px;">
+        <p class="text-xl">
+          <%= tesk.content %>
+        </p>
+        <form action="/app/<%=tesk.id%>/delete" method="post">
+          <button type="submit" class="px-2 py-1 rounded-md bg-red-500 "> Excluir</button>
+        </form>
+      </div>
       <% }); %>
   </div>
 </body>

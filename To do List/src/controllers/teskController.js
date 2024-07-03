@@ -10,6 +10,13 @@ const teskController = {
 
     res.redirect(`/app/${id}`)
   },
+  deleteTesk: (req, res) => {
+    const { id } = req.params
+
+    teskModel.deleteTesk(id)
+
+    res.redirect(`/app/${id}/delete`)
+  }
 }
 
 module.exports = teskController

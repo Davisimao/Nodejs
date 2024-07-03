@@ -1,3 +1,5 @@
+
+
 var tesks = []
 
 
@@ -13,6 +15,10 @@ const teskModel = {
     }
 
     return tesks.push(tesk)
+  },
+
+  deleteTesk(id) {
+    tesks = tesks.filter(element => element.id !== id)
   }
 }
 
