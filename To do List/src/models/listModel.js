@@ -17,6 +17,10 @@ const listModel = {
 
   getListById(id) {
     return lists.find(element => element.id === id)
+  },
+
+  deleteList(id) {
+    lists = lists.filter(element => element.id !== id)
   }
 
 }

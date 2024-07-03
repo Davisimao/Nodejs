@@ -27,7 +27,12 @@ const listController = {
 
     const tesks = teskModel.getAllTesks()
     res.render("tesks", { list, tesks })
-  }
+  },
+  deleteList: (req, res) => {
+    const { id } = req.params
+    listModel.deleteList(id)
+    res.redirect('/app')
+  },
 }
 
 
