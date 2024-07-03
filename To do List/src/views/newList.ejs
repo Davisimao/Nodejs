@@ -4,13 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>Document</title>
+
 </head>
 
-<body>
+<body class="flex flex-col justify-center items-center h-screen text-center gap-10 bg-gray-900 text-white">
+  <h1 class="text-4xl">Nova Lista de Tarefa</h1>
   <form action="/app" method="post">
-    <input type="text" name="nameList" placeholder="escreva sua nova lista">
-    <button type="submit">criar</button>
+    <input type="text" name="nameList" placeholder="Escreva sua nova lista"
+      class="p-3 py-4 border border-white bg-gray-900 h-10 rounded-md" style="width: 400px;">
+    <button type="submit" class="py-2 px-4 rounded-md bg-blue-500">Criar</button>
   </form>
 </body>
 
