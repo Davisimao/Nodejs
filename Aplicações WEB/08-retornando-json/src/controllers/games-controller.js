@@ -1,14 +1,9 @@
-const games = [{
-  id: 1, content: "primeira mensagem"
-}, {
-  id: 2, content: "segunda mensagem"
-}, {
-  id: 3, content: "terceira mensagem"
-}, {
-  id: 4, content: "quarta mensagem"
-}, {
-  id: 5, content: "quintaa mensagem"
-},]
+const games = [{ id: 1, name: 'Legend of Mana', genres: ['action-rpg'], year: 1999 },
+{ id: 2, name: 'World of Warcraft', genres: ['mmorpg'], year: 2004 },
+{ id: 3, name: 'Metal Gear Solid', genres: ['stealth', 'action-adventure'], year: 1998 },
+{ id: 4, name: 'Sonic Adventure 2', genres: ['platformer'], year: 2001 },
+{ id: 5, name: 'Age of Empires 2', genres: ['real-time-strategy'], year: 1999 }
+]
 
 module.exports = {
   index: (req, res) => res.json(games),
@@ -22,5 +17,18 @@ module.exports = {
     } else {
       res.json(game)
     }
+  },
+  // Post games/
+  save: (req, res) => {
+    const { name, genres, year, } = req.body
+
+    const newGame = {
+      id: Math.floor(Math.random() * 999999),
+      name,
+      genres,
+      year
+    }
+    games.push(newGame)
+    res.status(201).json(newGame)
   },
 }
