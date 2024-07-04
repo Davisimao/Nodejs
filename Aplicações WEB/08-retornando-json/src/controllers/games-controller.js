@@ -6,7 +6,10 @@ const games = [{ id: 1, name: 'Legend of Mana', genres: ['action-rpg'], year: 19
 ]
 
 module.exports = {
+
+  // GET Games
   index: (req, res) => res.json(games),
+  //GET Games/:id
   show: (req, res) => {
     const { id } = req.params
     const game = games.find(game => game.id === +id)
@@ -18,7 +21,7 @@ module.exports = {
       res.json(game)
     }
   },
-  // Post games/
+  // POST games/
   save: (req, res) => {
     const { name, genres, year, } = req.body
 
@@ -31,4 +34,25 @@ module.exports = {
     games.push(newGame)
     res.status(201).json(newGame)
   },
+  //POST /games/:id/genres
+
+  genres: (req, res) => {
+    const { id } = req.params
+    const { genre } = req.body
+
+    const gameIndex = games.findIndex(game => game.id === +id)
+
+    if (gameIndex === -1) {
+      return res.status(404).json({ message: 'Game not found!' })
+    }
+
+    if (typeof genre !== 'string' || games[gameIndex].genres.includes(genre)) {
+      return res.status(400).json({ message: 'Invalid genre!' })
+    }
+
+    games[gameIndex].genres.push(genre)
+
+    res.json(games[gameIndex])
+
+  }
 }

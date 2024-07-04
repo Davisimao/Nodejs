@@ -10,5 +10,7 @@ app.post("/",)
 app.get("/games", gamesController.index)
 app.get("/games/:id", gamesController.show)
 app.post("/games", gamesController.save)
+app.post("/games/:id/genres", gamesController.genres)
+
 
 app.listen(3000, () => console.log("Rodando servidor no http://localhost:3000"))
