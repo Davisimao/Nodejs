@@ -34,6 +34,28 @@ module.exports = {
     games.push(newGame)
     res.status(201).json(newGame)
   },
+  //PUT /games/id
+
+  update: (req, res) => {
+    const { id } = req.params
+    const { name, year } = req.body
+
+    const gameIndex = games.findIndex(game => game.id === +id)
+
+    if (gameIndex === -1) {
+      return res.status(404).json({ message: "Game not found!" })
+    }
+
+
+    games[gameIndex].name = name
+    games[gameIndex].year = year
+
+    res.json(games[gameIndex])
+
+
+  },
+
+
   //POST /games/:id/genres
 
   genres: (req, res) => {
