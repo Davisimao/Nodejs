@@ -46,13 +46,13 @@ module.exports = {
       return res.status(404).json({ message: "Game not found!" })
     }
 
-
-    games[gameIndex].name = name
-    games[gameIndex].year = year
-
+    if (typeof name === "string") {
+      games[gameIndex].name = name
+    }
+    if (typeof year === "number") {
+      games[gameIndex].year = year
+    }
     res.json(games[gameIndex])
-
-
   },
 
 
