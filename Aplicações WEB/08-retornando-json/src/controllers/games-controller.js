@@ -76,5 +76,21 @@ module.exports = {
 
     res.json(games[gameIndex])
 
+  },
+
+  //DELETE /games/id
+
+  delete: (req, res) => {
+    const { id } = req.params
+
+    const gameIndex = games.findIndex(game => game.id === +id)
+
+    if (gameIndex === -1) {
+      return res.status(404).json({ message: 'Game not found!' })
+    }
+
+    games.splice(gameIndex, 1)
+
+    res.status(204).end()
   }
 }
