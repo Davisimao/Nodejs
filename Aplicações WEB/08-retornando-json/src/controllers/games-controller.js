@@ -92,5 +92,24 @@ module.exports = {
     games.splice(gameIndex, 1)
 
     res.status(204).end()
+  },
+  // DELETE /games/:id/genres/:name
+  deleteGenre: (req, res) => {
+    const { id, name } = req.params
+
+
+    const gameIndex = games.findIndex(game => game.id === +id)
+
+    if (gameIndex === -1) {
+      return res.status(404).json({ message: 'Game not found!' })
+    }
+
+    if (!name || typeof name !== 'string' || !games[gameIndex].genres.includes(name)) {
+      return res.status(400).json({ message: 'Invalid genre!' })
+    }
+
+    games[gameIndex].genres = games[gameIndex].genres.filter(genre => genre !== name)
+
+    res.status(200).json(games[gameIndex])
   }
 }
