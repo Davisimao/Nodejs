@@ -1,18 +1,17 @@
 var playlists = [{
   id: 1,
-  musics: [{ year: 2000, title: "Ai se eu te pego", artist: "Michel Telo", album: "cucabeludo" }],
+  musics: [{ id: 1, year: 2000, title: "Ai se eu te pego", artist: "Michel Telo", album: "cucabeludo" }],
   name: "As melhors do ano",
   tags: ["curtidas", "as melhores"]
 }, {
   id: 2,
   musics: [
-    { year: 1995, title: "Wonderwall", artist: "Oasis", album: "(What's the Story) Morning Glory?" },
-    { year: 1991, title: "Smells Like Teen Spirit", artist: "Nirvana", album: "Nevermind" }
+    { id: 2, year: 1995, title: "Wonderwall", artist: "Oasis", album: "(What's the Story) Morning Glory?" },
+    { id: 3, year: 1991, title: "Smells Like Teen Spirit", artist: "Nirvana", album: "Nevermind" }
   ],
   name: "Rock Clássico",
   tags: ["rock", "clássicos", "anos 90"]
 }]
-
 
 module.exports = {
   //GET /playlist
@@ -38,7 +37,7 @@ module.exports = {
 
   //POST /playlist
   createPlaylist: (req, res) => {
-    const { music, name, tags } = req.body
+    const { name, tags } = req.body
     const playlist = {
       id: Math.floor(Math.random() * 999999),
       /* music: music, ??? */
@@ -47,6 +46,7 @@ module.exports = {
     }
     playlists.push(playlist)
     res.json(playlist)
+
   },
 
   //DELETE /playlist/:id/:name
@@ -60,4 +60,5 @@ module.exports = {
 é preciso criar um objeto somente para music, com o id de cada music
 
   }*/
+  playlists
 } 
