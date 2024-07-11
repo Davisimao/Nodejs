@@ -1,6 +1,6 @@
 #  Node.js
 
-Este repositório contém diversos projetos desenvolvidos com Node.jse Express, serve para eu deixar todos os meus aprendizados em node.js aqui.
+Este repositório contém diversos projetos desenvolvidos com Node.js e Express, serve para eu deixar todos os meus aprendizados em node.js aqui.
 
 ## Projetos
 
