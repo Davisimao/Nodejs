@@ -1,17 +1,26 @@
-var playlists = [{
-  id: 1,
-  musics: [{ id: 1, year: 2000, title: "Ai se eu te pego", artist: "Michel Telo", album: "cucabeludo" }],
-  name: "As melhors do ano",
-  tags: ["curtidas", "as melhores"]
-}, {
-  id: 2,
-  musics: [
-    { id: 2, year: 1995, title: "Wonderwall", artist: "Oasis", album: "(What's the Story) Morning Glory?" },
-    { id: 3, year: 1991, title: "Smells Like Teen Spirit", artist: "Nirvana", album: "Nevermind" }
-  ],
-  name: "Rock Clássico",
-  tags: ["rock", "clássicos", "anos 90"]
-}]
+const playlists = [
+  {
+    id: 1,
+    musics: [
+      { title: "Song A", artist: "Artist 1" },
+      { title: "Song B", artist: "Artist 2" },
+      { title: "Song C", artist: "Artist 3" },
+    ],
+    name: "Morning Vibes",
+    tags: ["chill", "morning", "relax"],
+  },
+  {
+    id: 2,
+    musics: [
+      { title: "Track X", artist: "Artist A" },
+      { title: "Track Y", artist: "Artist B" },
+      { title: "Track Z", artist: "Artist C" },
+    ],
+    name: "Workout Hits",
+    tags: ["energetic", "workout", "pump"],
+  }
+]
+
 
 module.exports = {
   //GET /playlist
@@ -40,7 +49,7 @@ module.exports = {
     const { name, tags } = req.body
     const playlist = {
       id: Math.floor(Math.random() * 999999),
-      /* music: music, ??? */
+      musics: musics ?? [],
       name: name,
       tags: tags,
     }
@@ -49,16 +58,17 @@ module.exports = {
 
   },
 
-  //DELETE /playlist/:id/:name
+  //DELETE playlists/:id/delete
 
-  /* deleteMusic: (req, res) => {
-    const { id, name } = req.params
+  deletePlaylist: (req, res) => {
+    const { id } = req.params
 
-    const playlistIndex = playlists.findIndex(playlist => playlist.id === +id)
+    const playlistindex = playlists.findIndex(playlist => playlist.id === +id)
 
-    playlists[playlistIndex].musics = playlists[playlistIndex].musics.splice(music => music.name === name)
-é preciso criar um objeto somente para music, com o id de cada music
 
-  }*/
-  playlists
+    playlists.splice(playlistindex, 1)
+    res.status(204).end()
+  }
+
+
 } 
