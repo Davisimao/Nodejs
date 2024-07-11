@@ -87,5 +87,17 @@ module.exports = {
 
   },
 
-  // DELETE
+  // DELETE  /playlists/:id/musics/:musicId
+
+  deleteMusics: (req, res) => {
+    const { id, musicId } = req.params
+
+    const playlist = playlists.find(playlist => playlist.id === +id)
+
+    const musicIndex = playlist.musics.findIndex(music => music.id === +musicId)
+
+    playlist.musics.splice(musicIndex, 1)
+
+    res.status(204).end()
+  }
 } 
