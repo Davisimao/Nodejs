@@ -2,9 +2,6 @@ const playlists = [
   {
     id: 1,
     musics: [
-      { title: "Song A", artist: "Artist 1" },
-      { title: "Song B", artist: "Artist 2" },
-      { title: "Song C", artist: "Artist 3" },
     ],
     name: "Morning Vibes",
     tags: ["chill", "morning", "relax"],
@@ -13,8 +10,6 @@ const playlists = [
     id: 2,
     musics: [
       { title: "Track X", artist: "Artist A" },
-      { title: "Track Y", artist: "Artist B" },
-      { title: "Track Z", artist: "Artist C" },
     ],
     name: "Workout Hits",
     tags: ["energetic", "workout", "pump"],
@@ -46,7 +41,7 @@ module.exports = {
 
   //POST /playlist
   createPlaylist: (req, res) => {
-    const { name, tags } = req.body
+    const { musics, name, tags } = req.body
     const playlist = {
       id: Math.floor(Math.random() * 999999),
       musics: musics ?? [],
@@ -68,7 +63,29 @@ module.exports = {
 
     playlists.splice(playlistindex, 1)
     res.status(204).end()
-  }
+  },
 
+  //POST playlists/:id/musics
 
+  addMusic: (req, res) => {
+    const { id } = req.params
+    const { title, year, artist, album } = req.body
+
+    const music = {
+      id: Math.floor(Math.random() * 999999),
+      title,
+      year,
+      artist,
+      album
+    }
+
+    const playlist = playlists.find(playlist => playlist.id === +id)
+
+    playlist.musics.push(music)
+
+    res.status(201).json(music)
+
+  },
+
+  // DELETE
 } 
