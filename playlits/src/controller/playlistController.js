@@ -9,7 +9,7 @@ const playlists = [
   {
     id: 2,
     musics: [
-      { title: "Track X", artist: "Artist A" },
+      { id: 3, title: "Track X", artist: "Artist A", album: "Vingando a paixão" },
     ],
     name: "Workout Hits",
     tags: ["energetic", "workout", "pump"],
@@ -99,5 +99,28 @@ module.exports = {
     playlist.musics.splice(musicIndex, 1)
 
     res.status(204).end()
+  },
+
+  //PUT /playlist/:id/tags/:name
+  updateTags: (req, res) => {
+
+    const { id, name } = req.params
+
+    const { nameTag } = req.body
+
+
+    const playlistIndex = playlists.findIndex(playlist => playlist.id === +id)
+
+    const tagIndex = playlists[playlistIndex].tags.findIndex(tag => tag === name)
+
+    playlists[playlistIndex].tags[tagIndex] = nameTag
+
+
+
+
+
+
+    res.json(playlists[playlistIndex])
+
   }
 } 
