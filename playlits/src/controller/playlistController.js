@@ -9,7 +9,7 @@ const playlists = [
   {
     id: 2,
     musics: [
-      { title: "Track X", artist: "Artist A" },
+      { id: 3, title: "Track X", artist: "Artist A", album: "Vingando a paixão" },
     ],
     name: "Workout Hits",
     tags: ["energetic", "workout", "pump"],
