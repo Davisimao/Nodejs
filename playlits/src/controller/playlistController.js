@@ -100,5 +100,27 @@ module.exports = {
 
     res.status(204).end()
 
+  },
+  //PUT /playlist/:id/tags/:name
+  updateTags: (req, res) => {
+
+    const { id, name } = req.params
+
+    const { nameTag } = req.body
+
+
+    const playlistIndex = playlists.findIndex(playlist => playlist.id === +id)
+
+    const tagIndex = playlists[playlistIndex].tags.findIndex(tag => tag === name)
+
+    playlists[playlistIndex].tags[tagIndex] = nameTag
+
+
+
+
+
+
+    res.json(playlists[playlistIndex])
+
   }
 } 

@@ -14,5 +14,6 @@ app.delete("/playlist/:id/delete", playlistController.deletePlaylist)
 app.post("/playlist/:id/musics", playlistController.addMusic)
 app.delete("/playlist/:id/musics/:musicId", playlistController.deleteMusics)
 app.put("/playlist/:id/tags/:name", playlistController.updateTags)
+app.put("/playlist/:id/tags/:name", playlistController.updateTags)
 
 
