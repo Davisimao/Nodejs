@@ -99,5 +99,6 @@ module.exports = {
     playlist.musics.splice(musicIndex, 1)
 
     res.status(204).end()
+
   }
 } 
