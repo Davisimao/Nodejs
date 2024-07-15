@@ -39,6 +39,8 @@ module.exports = {
     if (password !== user.password) {
       return res.redirect('/')
     }
+    req.session.authenticated = true
+    req.session.currentUser = user
 
     res.redirect('/dashboard')
   },
@@ -46,9 +48,10 @@ module.exports = {
 
   logout: (req, res) => {
     res.redirect('/')
-  }
+  },
 
   //POST /auth/logout
 
 
+  users
 }
