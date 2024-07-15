@@ -1,7 +1,4 @@
-let users = [
-  { username: "Davi", password: "123456" },
-  { username: "teste", password: "123456" }
-]
+const users = require("../models/users")
 
 module.exports = {
   //GET /
@@ -23,7 +20,8 @@ module.exports = {
 
     const newUser = {
       username,
-      password
+      password,
+      role: "standard"
     }
     users.push(newUser)
     req.session.authenticated = true

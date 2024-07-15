@@ -1,3 +1,6 @@
+const users = require("../models/users")
+
+
 const authMiddleware = (req, res, next) => {
   if (req.session.authenticated) {
     next()
@@ -6,4 +9,12 @@ const authMiddleware = (req, res, next) => {
   }
 }
 
-module.exports = authMiddleware
+const roleMiddleware = (req, res, next) => {
+  if (req.session.currentUser.role !== "admin") {
+    return res.redirect("/dashboard")
+  } else {
+    next()
+  }
+}
+
+module.exports = { authMiddleware, roleMiddleware }
