@@ -47,6 +47,7 @@ module.exports = {
   //GET auth/logout
 
   logout: (req, res) => {
+    req.session.authenticated = false
     res.redirect('/')
   },
 
