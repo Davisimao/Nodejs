@@ -12,7 +12,7 @@ router.get("/dashboard", authMiddleware, dashboardController.dashboard)
 router.post("/auth/register", authController.register)
 router.post("/auth/login", authController.login)
 router.get("/auth/logout", authMiddleware, authController.logout)
-router.get("/dashboard/users", roleMiddleware, dashboardController.users)
+router.get("/dashboard/users", authMiddleware, roleMiddleware, dashboardController.users)
 
 
 
