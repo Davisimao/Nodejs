@@ -11,7 +11,7 @@ router.get("/", authController.index)
 router.get("/dashboard", authMiddleware, dashboardController.dashboard)
 router.post("/auth/register", authController.register)
 router.post("/auth/login", authController.login)
-router.get("/auth/logout", authController.logout)
+router.get("/auth/logout", authMiddleware, authController.logout)
 
 
 
