@@ -26,6 +26,8 @@ module.exports = {
       password
     }
     users.push(newUser)
+    req.session.authenticated = true
+    req.session.currentUser = newUser
     res.redirect('/dashboard')
   },
 
