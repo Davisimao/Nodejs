@@ -18,14 +18,14 @@ module.exports = {
 
 
     if (usern) {
-      res.status(400).redirect('/')
+      return res.status(400).redirect('/')
     }
 
-    const user = {
+    const newUser = {
       username,
       password
     }
-    users.push(user)
+    users.push(newUser)
     res.redirect('/dashboard')
   },
 
@@ -47,6 +47,7 @@ module.exports = {
   logout: (req, res) => {
     res.redirect('/')
   }
+
   //POST /auth/logout
 
 
