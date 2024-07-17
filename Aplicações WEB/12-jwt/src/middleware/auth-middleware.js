@@ -1,16 +1,28 @@
 const jwt = require("jsonwebtoken")
+const users = require("../models/users")
+
+const secretkey = "jacagay-!123456"
 
 
 const authMiddleware = (req, res, next) => {
 
-  const authHeader = req.headers.autorization
+  const authHeader = req.headers.authorization
 
-  if (!authHeader) {
-    res.status(401).json({ message: "cade o token em?" })
+  const token = authHeader.split(" ")[1]
+
+  try {
+    const decodedToken = jwt.decode(token, secretkey)
+    const user = users.find(user => user.username === decodedToken.username)
+    if (!user) {
+      console.log(user)
+      console.log(decodedToken)
+      return res.status(401).json({ message: "invalid user" })
+    }
+    req.autheticatedUser = user
+    next()
+  } catch (error) {
+    return res.status(401).json({ message: "invalid token" })
   }
-  console.log(authHeader)
-  next()
-
 
 }
 
