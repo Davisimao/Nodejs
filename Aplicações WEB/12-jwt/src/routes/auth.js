@@ -26,7 +26,7 @@ authRouter.post("/login", (req, res) => {
   if (!user || user.password !== password) {
     return res.json(401).json({ message: "not found!" })
   }
-  const token = jwt.sign({ username: username }, secretkey, { expiresIn: "1h" })
+  const token = jwt.sign({ username }, secretkey, { expiresIn: "1h" })
   res.json({ token })
 
 })

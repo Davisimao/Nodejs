@@ -5,7 +5,9 @@ const protectedRouter = express.Router()
 
 protectedRouter.get("/dashboard", authMiddleware, (req, res) => {
 
-  res.json({ message: "voce esta na area protegida" })
+  const { username } = req.autheticatedUser
+
+  res.json({ message: `voce esta na area protegida, Seja bem vindo ${username}` })
 
 })
 
