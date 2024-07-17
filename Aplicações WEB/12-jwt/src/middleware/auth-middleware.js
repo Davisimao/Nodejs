@@ -11,7 +11,7 @@ const authMiddleware = (req, res, next) => {
   const token = authHeader.split(" ")[1]
 
   try {
-    const decodedToken = jwt.decode(token, secretkey)
+    const decodedToken = jwt.verify(token, secretkey)
     const user = users.find(user => user.username === decodedToken.username)
     if (!user) {
       return res.status(401).json({ message: "invalid user" })
