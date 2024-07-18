@@ -6,7 +6,11 @@ const protectedRouter = express.Router()
 
 protectedRouter.get("/dashboard", authMiddleare, (req, res) => {
 
-  res.json({ measage: "teste" })
+  const { username } = req.autheticatedUser
+
+
+
+  res.json({ message: `${username} acessando a dashboard` })
 })
 
 

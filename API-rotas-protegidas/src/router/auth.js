@@ -31,7 +31,7 @@ authRouter.post("/login", (req, res) => {
   const user = users.find(user => user.username == username)
 
   if (!user || user.password !== password) {
-    return res.json(401).json({ message: "not found!" })
+    return res.status(401).json({ message: "user not found!" })
   }
 
   const token = jwt.sign({ username }, "chavesecreta")
