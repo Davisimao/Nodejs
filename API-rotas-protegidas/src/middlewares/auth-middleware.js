@@ -6,7 +6,6 @@ const authMiddleare = (req, res, next) => {
 
   const authHeader = req.headers.authorization
 
-
   if (!authHeader) {
     res.json({ message: `Visitante acessando a dashboard` })
   } else {
