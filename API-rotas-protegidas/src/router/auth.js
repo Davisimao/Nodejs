@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken")
 authRouter.post("/register", (req, res) => {
   const { username, password, email } = req.body
 
+
   const userUsed = users.find(user => user.username == username)
   const emailUsed = users.find(user => user.email == email)
 
