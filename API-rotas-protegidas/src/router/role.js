@@ -22,6 +22,25 @@ roleRouter.delete("/delete/:name", roleMiddleware, (req, res) => {
 
 })
 
+roleRouter.post("/createUser", roleMiddleware, (req, res) => {
+
+  const { username, password, email } = req.body
+  const userUsed = users.find(user => user.username == username)
+  const emailUsed = users.find(user => user.email == email)
+
+  if (userUsed || emailUsed) {
+    return res.json({ message: "Esta credencial já foi usada, mude o username/email" })
+  }
+
+  const newUser = {
+    username, password, email, role: "admin"
+  }
+
+  users.push(newUser)
+
+  res.json(newUser)
+})
+
 
 
 
