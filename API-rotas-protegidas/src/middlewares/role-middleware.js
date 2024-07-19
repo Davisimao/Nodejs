@@ -14,7 +14,6 @@ const roleMiddleware = (req, res, next) => {
 
   try {
     const decodedToken = jwt.decode(token)
-    console.log(token)
     const user = users.find(user => user.username === decodedToken.username)
     if (user.role !== "admin") {
       return res.status(401).json({

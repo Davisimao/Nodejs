@@ -12,13 +12,15 @@ roleRouter.delete("/delete/:name", roleMiddleware, (req, res) => {
 
   if (!user) {
     res.status(401).json({ message: "usuario não existe" })
+  } else {
+    const userIndex = users.findIndex(user => user.name === name)
+
+    users.splice(userIndex, 1)
+
+    res.json({ users })
   }
 
-  const userIndex = users.findIndex(user => user.name === name)
 
-  users.splice(userIndex, 1)
-
-  res.json({ users })
 
 })
 
