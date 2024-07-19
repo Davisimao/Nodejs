@@ -20,6 +20,7 @@ const roleMiddleware = (req, res, next) => {
         message: "usuario não tem permissão para acessar essa página"
       })
     }
+    req.autheticatedUser = user
     next()
   } catch (error) {
     return res.status(401).json({ message: "invalid Token" })
